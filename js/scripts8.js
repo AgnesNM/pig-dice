@@ -19,12 +19,13 @@ Player.prototype.hold = function (){
 //UI Logic
 $(document).ready(function(){
 	$("form#p1Details").submit(function(event){
-	event.PreventDefault();
-  var p1FirstNameInput=$("input#p1FName").val();
-  var p1LastNameInput=$("input#p1LName").val();
+  event.PreventDefault();
+  var p1FirstNameInput=$("#p1FName").val();
+  var p1LastNameInput=$("#p1LName").val();
   var player1=new Player(p1FirstNameInput,p1LastNameInput);
-
-  $("h1#player1").text(player1);
+  $("#p1FName").text(" "  + Player.firstName);
+  $("#p1LName").text(" "  + Player.lastName);
+  $("#player1").text(Player.prototype.name);
 
 
   //$("input#p1FName").val("");
@@ -35,6 +36,7 @@ $(document).ready(function(){
   var p2FirstNameInput=$("input#p2FName").val();
   var p2LastNameInput=$("input#p2LName").val();
   var Player2=new Player(p2FirstNameInput,p2LastNameInput);
+
 
   $("h2#player2").append(newPlayer.prototype.name);
 
