@@ -1,14 +1,23 @@
-nav{
+nav {
   background-color: black;
-  font-size:2em;
+  font-size: 2em;
+  color:yellow;
 }
-button{
-  padding-bottom:20px;
+
+button {
+  padding-bottom: 20px;
   display: inline-grid;
+  margin-bottom: 5%;
 }
-input{
-margin-bottom:5%;
+
+input {
+  margin-bottom: 5%;
 }
-button{
-margin-bottom:5%;
+
+body {
+  background-color: yellow;
+}
+
+.container-fluid {
+  background-color: black;
 }

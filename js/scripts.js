@@ -1,42 +1,30 @@
 //Business Logic
-function Player(name,number){
+//Player Object Constructor
+function Player(name){
   this.name = name;
-  this.number = number;
-  }
-Player.prototype = function(){
-  return this.name + "" + this.number;
 }
+//Player Object Prototype
+Player.prototype.playerDetails = function(){
+  return this.name + " " ;
+}
+//Dice Object Prototype
 function Dice(pips,color){
   this.pips = pips;
   this.color = color;
 }
-Dice.prototype.roll = function(){
-  return [1,2,3,4,5,6]
+//Dice Object Prototype
+Dice.prototype.roll = function() {
+return Math.floor((Math.random()*7)+1);
 }
-Dice.prototype.display = function(){
-  return Math.floor((Math.random() * 7) + 1);
-}
-//method= rolling
-//ClassName.prototype.methodName = function () {
-// find()
 //UI Logic
 $(document).ready(function(){
-  $("button#roll").click(function(){//on clicking the roll button, user score needs to be randomly selected from an array (Math.floor(Math.random() * 10); ). It will be collected as a string.
-    var score = Math.floor((Math.random() * 7) + 1);
-
-    //it then needs to be converted to an integer
-    var diceRollScore = results[];
-    var diceRollRoundScore = results[]*4
-    var overallScore = add(index.length);
-    var diceRollScore = $(this).find("button#roll").val();
-
+  $("button#user").submit(function(event){
+    event.preventDefault();
+    var player1 = $("input#p-name").val();
+    var newPlayer = new Player(player1);
+    $("ol#p-details").append("<li><span> class='info'>" + newPlayer.name + "</span></li>");
+    $("input#p-name").val("").text("input#p-name");
   });
-    $("button#hold").click(function(){
-      $("button#pass").click(function(){
-        $("button#reset").click(function(){
-
-        });
-      })
-    });
 
 });
+//clean
