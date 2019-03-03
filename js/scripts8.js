@@ -22,17 +22,13 @@ $(document).ready(function(){
 	event.PreventDefault();
   var p1FirstNameInput=$("input#p1FName").val();
   var p1LastNameInput=$("input#p1LName").val();
-  var Player1=new Player(p1FirstNameInput,p1LastNameInput);
+  var player1=new Player(p1FirstNameInput,p1LastNameInput);
 
-  $("h1#player1").append(newPlayer.prototype.name);
+  $("h1#player1").text(player1);
 
-  $("button#p1info").last().click(function(){
-  $("h1#player1").text(newPlayer.prototype.name());
-  $("p#p1FN").text(newPlayer.firstName);
-  $("p#p1LN").text(newPlayer.lastName);
-  });
-  $("input#p1FName").val("");
-  $("input#p1LName").val("");
+
+  //$("input#p1FName").val("");
+  //$("input#p1LName").val("");
   });
   $("form#p2Details").submit(function(event){
 	event.PreventDefault();
@@ -42,11 +38,7 @@ $(document).ready(function(){
 
   $("h2#player2").append(newPlayer.prototype.name);
 
-  $("button#p2Info").last().click(function(){
-  $("h2#player2").text(newPlayer.name());
-  $("p#p2FN").text(newPlayer.firstName);
-  $("p#p2LN").text(newPlayer.lastName);
-  });
+
   $("input#p2FName").val("");
   $("input#p2LName").val("");
   });

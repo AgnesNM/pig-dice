@@ -17,18 +17,19 @@ Player.prototype.hold = function (){
 
 //UI Logic
 $(document).ready(function(){
-	$("button#start1").submit(function(event){
-    event.PreventDefault();
-    $("button#roll1").click(function(){
+	//$("button#start1").submit(function(event){
+    //event.PreventDefault();
+    $("button#p1roll").click(function(){
     function player1() {
-      document.getElementbyId("roll1").disabled = false;
-      document.getElementbyId("roll2").disabled = true;
-    }
+      document.getElementbyId("p1roll").disabled = false;
+      document.getElementbyId("p2roll").disabled = true;
+    });
+    $("button#p1roll").click(function(){
     function player2() {
-      document.getElementbyId("roll1").disabled = true;
-      document.getElementbyId("roll2").disabled = false;
-    }
+      document.getElementbyId("p1roll").disabled = true;
+      document.getElementbyId("p2roll").disabled = false;
+    });
     var totalScore = Math.floor((Math.random()*6)+1);
     $("#scoreboard").text(" " + Player.roll)
-  });
+  //});
 });
