@@ -28,8 +28,8 @@ $(document).ready(function(){
 
   $("button#p1info").last().click(function(){
   $("h1#player1").text(newPlayer.name());
-  $("input#p1FName").text(newPlayer.firstName);
-  $("input#p1LName").text(newPlayer.lastName);
+  $("p#p1FN").text(newPlayer.firstName);
+  $("p#p1LN").text(newPlayer.lastName);
   });
   $("input#p1FName").val("");
   $("input#p1LName").val("");
@@ -44,8 +44,8 @@ $(document).ready(function(){
 
   $("button#p2Info").last().click(function(){
   $("h2#player2").text(newPlayer.name());
-  $("input#p2FName").text(newPlayer.firstName);
-  $("input#p2LName").text(newPlayer.lastName);
+  $("p#p2FN").text(newPlayer.firstName);
+  $("p#p2LN").text(newPlayer.lastName);
   });
   $("input#p2FName").val("");
   $("input#p2LName").val("");

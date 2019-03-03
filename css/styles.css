@@ -3,21 +3,39 @@ nav {
   font-size: 2em;
   color:yellow;
 }
+a{
+  color:yellow;
+}
 
 button {
   padding-bottom: 20px;
   display: inline-grid;
   margin-bottom: 5%;
+  color:black;
+  padding:2px;
 }
 
 input {
   margin-bottom: 5%;
+  color:black;
 }
 
 body {
   background-color: yellow;
 }
 
-.container-fluid {
-  background-color: black;
+.row{
+  color:yellow;
+}
+#c1{
+  background-color:#C0C0C0;
+}
+#c2{
+  background-color:#808080;
+}
+#c3{
+  background-color:#000000;
+}
+#c4{
+  background-color:#A9A9A9;
 }

@@ -4,9 +4,9 @@ function Player(name,score,total){
   this.score = score;
   this.total = total;
 }
-Player.prototype.start = function(){
-  return (this.name)//**
-}
+//Player.prototype.start = function(){
+  //return (this.name)//**
+//}
 Player.prototype.roll = function(){
 return Math.floor((Math.random()*6)+1);
 }
