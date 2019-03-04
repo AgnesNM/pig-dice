@@ -54,6 +54,11 @@ h2{
 .p1Information{
   background-color: black;
 }
+#comment{
+  color:yellow;
+}
+
+}
 @media screen and (max-width:768px) {
   #title{
   width:100%;
