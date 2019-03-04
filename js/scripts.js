@@ -1,78 +1,69 @@
 //Business Logic
 //Player Object constructor
-function Player(score) {
-  this.score=score;
+function Player(score, roll,total) {
+  this.score = score;
+  this.roll = roll;
+  this.total = total;
 }
+//Methods attached to Player
 Player.prototype.roll = function(){
   return Math.floor((Math.random()*6)+1);
 
 }
-Player.prototype.hold = function (){
-	alert("it's your opponent's turn");
-  return totalScore + 0
+var p1Score = 0
+var p1roll = 0
+var p2Score = 0
+var p2roll = 0
+
+function player2() {
+  document.getElementbyId("p1roll").disabled = true;
+  document.getElementbyId("p2roll").disabled = false;
+}
+function player1() {
+  document.getElementbyId("p1roll").disabled = false ;
+  document.getElementbyId("p2roll").disabled = true;
 }
 
 //UI Logic
 $(document).ready(function(){
-	$("button#p1roll").click(function(){
-    var player1=new Player();
-    function player1() {
-    document.getElementbyId("p1roll").disabled = false;
-    document.getElementbyId("p2roll").disabled = true;
-  }
+	$("#p1roll").click(function(){
 
-    var score =0;
-    var playerOneArray=[];
-    var turn = player1.roll();
-
-  function add(){
-    for(var i=0; i>=0;i++){
-      playerOne=player1.roll();
-      playerOneArray.push(playerOne);
-      score+=playerOne;
-      // alert(score);
-      $("#p1RollScore").text(score);
+    p1roll=Math.floor((Math.random()*6)+1);
+    // $("#p1roll").text(p1roll);
+    if(p1roll!=1){
+      p1Score+=p1roll
+    }else{
+      p1Score=0;
+      player2();
     }
-  }
-  add();
-  // $("p#p1RollScore").text("Your score is " + turn);
-  // $("p#scoreboard1").text("Your total score is " + score);
-  // });
+    $("#p1Score").text(p1Score);
+  });
+  $("#p2roll").click(function(){
 
-  $("button#p1hold").click(function(){
-    var holdScore = Player.prototype.hold
-      alert(rollScore);
-      rollScore=0;
-      if(totalScore>=100){
-      alert("You are the winner!")
+    p2roll=Math.floor((Math.random()*6)+1);
+    // $("#p1roll").text(p1roll);
+    if(p2roll!=1){
+      p2Score+=p2roll
+    }else{
+      p2Score=0;
+    }
+    $("#p2Score").text(p2Score);
+  });
+  $("#p2hold").click(function(){
+         alert(p2Score);
+         if(p2Score==100){
+         alert("You are the winner!,game over!")
+         }else{
+         player1();
+         }
+ });
+  $("#p1hold").click(function(){
+      alert(p1Score);
+      //p1Score=0;
+      if(p1Score==100){
+      alert("You are the winner!,game over!")
       }else{
       player2();
-      }
-  function player2() {
-        document.getElementbyId("p1roll").disabled = true;
-        document.getElementbyId("p2roll").disabled = false;
-  }
-    var rollScore =0;
-    var totalScore=0;
-    var turn = Math.floor((Math.random()*6)+1);;
-      if (turn !== 1) {
-      rollScore+=turn;
-      }else{
-      rollScore=0;
-    player1();
-  }
-  $("p#p2RollScore").text("Your score is " + turn);
-  $("p#scoreboard2").text("Your total score is " + totalScore);
-});
-
-  $("button#p2hold").click(function(){
-  var holdScore = Player.hold
-    alert(rollScore);
-    rollScore=0;
-    if(totalScore>=100){
-    alert("You are the winner!")
-    }else{
-    player1();
     }
-  });
+});
 });
