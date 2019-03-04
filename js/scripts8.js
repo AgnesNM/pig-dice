@@ -34,7 +34,7 @@ $(document).ready(function(){
     }
   }
   add();
-  $("p#p1RollScore").text("Your score is " + turn);
+  $("p#p1RollScore").text("Your score is " + score);
   $("p#scoreboard1").text("Your total score is " + totalScore);
   });
 

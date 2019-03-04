@@ -14,7 +14,7 @@ Player.prototype.hold = function (){
 //UI Logic
 $(document).ready(function(){
 	$("button#p1roll").click(function(){
-    function player1() { 
+    function player1() {
     document.getElementbyId("p1roll").disabled = false;
     document.getElementbyId("p2roll").disabled = true;
   }
