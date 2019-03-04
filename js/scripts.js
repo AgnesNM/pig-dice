@@ -10,10 +10,11 @@ Player.prototype.roll = function(){
   return Math.floor((Math.random()*6)+1);
 
 }
-var p1Score = 0
-var p1roll = 0
-var p2Score = 0
-var p2roll = 0
+var p1TotalScore = 0
+var p1RollScore = 0
+var p2TotalScore = 0
+var p2RollScore = 0
+
 
 function player2() {
   document.getElementbyId("p1roll").disabled = true;
@@ -28,37 +29,40 @@ function player1() {
 $(document).ready(function(){
 	$("#p1roll").click(function(){
 
-    p1roll=Math.floor((Math.random()*6)+1);
-    if(p1roll!=1){
-      p1Score+=p1roll
+    p1RollScore=Math.floor((Math.random()*6)+1);
+    if(p1RollScore!=1){
+      p1TotalScore+=p1RollScore;
     }else{
-      p1Score=0;
+      p1TotalScore=0
+      alert("Your dice rolled to 1, it's player 2's turn");
       player2();
     }
-    $("#p1Score").text(p1Score);
+    $("#p1RollScore").text(p1RollScore);
+    $("#p1TotalScore").text(p1TotalScore);
   });
   $("#p2roll").click(function(){
 
-    p2roll=Math.floor((Math.random()*6)+1);
-    if(p2roll!=1){
-      p2Score+=p2roll
+    p2RollScore=Math.floor((Math.random()*6)+1);
+    if(p2RollScore!=1){
+      p2TotlScore+=p2RollScore
     }else{
-      p2Score=0;
+      p2TotalScore=0;
+      alert("Your dice rolled to 1, it's player 1's turn");
     }
-    $("#p2Score").text(p2Score);
+    $("#p2RollScore").text(p2RollScore);
+    $("#p2TotalScore").text(p2TotalScore);
   });
   $("#p2hold").click(function(){
-         alert(p2Score);
-         if(p2Score==100){
+         alert(p2TotalScore);
+         if(p2TotalScore==100){
          alert("You are the winner!,game over!")
          }else{
          player1();
          }
  });
   $("#p1hold").click(function(){
-      alert(p1Score);
-      //p1Score=0;
-      if(p1Score==100){
+      alert(p1TotalScore);
+      if(p1TotalScore==100){
       alert("You are the winner!,game over!")
       }else{
       player2();
