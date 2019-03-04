@@ -1,9 +1,7 @@
 //Business Logic
 //Player Object constructor
 function Player(name) {
-  // this.firstName = first;
-  // this.lastName = last;
-  // this.score = [];
+  this.score=score;
 }
 Player.prototype.roll = function(){
   return Math.floor((Math.random()*6)+1);
@@ -29,13 +27,14 @@ $(document).ready(function(){
       if (turn !== 1) {
       rollScore+=turn;
       }else{
-      rollScore=turn;
+      rollScore=0;
       player2();
     }
-    totalScore += (Math.floor((Math.random()*6)+1));
-  $("p#p1Roll").text("Your score is " + turn);
-  $("p#p1RollScore").text("Your total score is " + totalScore);
+
+  $("p#p1RollScore").text("Your score is " + turn);
+  $("p#scoreboard1").text("Your total score is " + totalScore);
   });
+
     $("button#p1hold").click(function(){
       var holdScore = Player.prototype.hold
       alert(rollScore);
