@@ -54,3 +54,9 @@ h2{
 .p1Information{
   background-color: black;
 }
+@media screen and (max-width:768px) {
+  #title{
+  width:100%;
+  background-color: white;
+  }
+}
