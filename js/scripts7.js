@@ -21,6 +21,7 @@ $(document).ready(function(){
 	$("form#p1Details").submit(function(event){
 	event.PreventDefault();
   var p1FirstNameInput=$("input#p1FName").val();
+  $(".first-name-display").text(p1FirstNameInput);
   var p1LastNameInput=$("input#p1LName").val();
   var Player1=new Player(p1FirstNameInput,p1LastNameInput);
 

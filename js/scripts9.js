@@ -11,35 +11,40 @@ Player.prototype.hold = function (){
 	alert("it's your opponent's turn");
   return totalScore + 0
 }
-
 //UI Logic
 $(document).ready(function(){
 	$("button#p1roll").click(function(){
-    var player1=new Player();
-    function player1() {
+    function player1() { 
     document.getElementbyId("p1roll").disabled = false;
     document.getElementbyId("p2roll").disabled = true;
   }
-
-    var score =0;
-    var playerOneArray=[];
-    var turn = player1.roll();
+  var player1 = new Player();
+  score=0;
+  var playerOneArray=[]
 
   function add(){
-    for(var i=0; i>=0;i++){
-      playerOne=player1.roll();
-      playerOneArray.push(playerOne);
-      score+=playerOne;
-      alert(score);
-    }
+    for(var i=0;i>=0;i++){
+    playerOne=player1.roll();
+    playerOneArray.push(playerOne);
+    score+=playerOne;
+    alert(score);
+  }
   }
   add();
+
+    if (turn !== 1) {
+    rollScore+=turn;
+      }else{
+      rollScore=0;
+      player2();
+    }
+
   $("p#p1RollScore").text("Your score is " + turn);
   $("p#scoreboard1").text("Your total score is " + totalScore);
   });
 
   $("button#p1hold").click(function(){
-    var holdScore = Player.prototype.hold
+    var holdScore = Player.hold
       alert(rollScore);
       rollScore=0;
       if(totalScore>=100){
