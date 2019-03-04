@@ -29,7 +29,6 @@ $(document).ready(function(){
 	$("#p1roll").click(function(){
 
     p1roll=Math.floor((Math.random()*6)+1);
-    // $("#p1roll").text(p1roll);
     if(p1roll!=1){
       p1Score+=p1roll
     }else{
@@ -41,7 +40,6 @@ $(document).ready(function(){
   $("#p2roll").click(function(){
 
     p2roll=Math.floor((Math.random()*6)+1);
-    // $("#p1roll").text(p1roll);
     if(p2roll!=1){
       p2Score+=p2roll
     }else{
