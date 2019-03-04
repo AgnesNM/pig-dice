@@ -33,7 +33,6 @@ $(document).ready(function(){
     if(p1RollScore!=1){
       p1TotalScore+=p1RollScore;
     }else{
-      // p1TotalScore=0;
       alert("Your dice rolled to 1, it's player 2's turn");
       player2();
     }
@@ -47,7 +46,6 @@ $(document).ready(function(){
     if(p2RollScore!=1){
       p2TotalScore+=p2RollScore;
     }else{
-      // p2TotalScore=0;
       alert("Your dice rolled to 1, it's player 2's turn");
       player1();
     }
