@@ -1,4 +1,3 @@
-
 p1Round = [];
 p2Round = [];
 btn = document.getElementById('p1Roll');
@@ -6,10 +5,14 @@ btn.addEventListener('click', function (event){
 p1 = function (){
     let random =  Math.floor((Math.random()*6)+1);
     if(random ===1){
+        let scores = p1Round.push(0); 
         alert(`You rolled 1, player 2's turn`);
     }     
     document.getElementById('p1RollScore').innerHTML = random;
-    let scores = p1Round.push(random);       
+    if (random !=1){
+        let scores = p1Round.push(random); 
+    }
+          
 };
 game = function (){
     for(let i=0; i<1;i++){
@@ -33,12 +36,17 @@ btn2 = document.getElementById('p2Roll');
 btn2.addEventListener('click', function (event){
 p2 = function (){
     let random2 =  Math.floor((Math.random()*6)+1); 
-    if(random2 ===1){
-        alert(`You rolled 1, player 1's turn`);
+    if(random2 === 1){    
+        let scores2 = p2Round.push(0);     
+        alert(`You rolled 1, player 1's turn`);                
     }     
     document.getElementById('p2RollScore').innerHTML = random2;
-    let scores2 = p2Round.push(random2);       
+    if (random2 !=1){
+        let scores2 = p2Round.push(random2); 
+    }
+        
 };
+
 game2 = function (){
     for(let i=0; i<1;i++){
         p2();                    
@@ -58,3 +66,4 @@ btn2H.addEventListener('click', function(event){
 });
 
 //We are able to declare the winner, and stop when the die rolls to 1. The player can hold too!
+//A fix that needs to be done: if a player rolls a 1, they needs to score 0. This happens with the total score, and not round score. 
