@@ -61,9 +61,20 @@ function newFunction() {
     btn2H = document.getElementById('p2Hold');
     btn2H.addEventListener('click', function (event) {
         alert(`Player 2 holds! It's player 1's turn!`);
-    });
+    });    
 }
+
 //We are able to declare the winner, and stop when the die rolls to 1. The player can hold too!
 //A fix that needs to be done: if a player rolls a 1, they needs to score 0. This happens with the total score, and not round score. 
 
 //Playing with the refactor option here.
+
+//Reset button
+reset =  document.getElementById("reset-btn"); 
+    reset.addEventListener('click', function(event){
+    document.getElementById('p1RollScore').innerHTML = "";
+    document.getElementById('p1TotalScore').innerHTML = "";
+    document.getElementById('p2RollScore').innerHTML = "";
+    document.getElementById('p2TotalScore').innerHTML = "";
+    });
+
